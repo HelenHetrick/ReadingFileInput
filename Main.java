@@ -47,7 +47,57 @@ while(inputFile3.hasNext())
 
 token = inputFile3.next();
 System.out.println(token);
-
 }
+inputFile3.close();
+
+//read integer.text file and calculate an average
+File fileName4=new File("integers.txt");
+Scanner inputFile4=new Scanner(fileName4);
+
+double average = 0.0;
+double sum = 0.0;
+int count4=0;
+
+while(inputFile4.hasNextInt())
+{
+sum += inputFile4.nextInt();
+count4++;
+}
+inputFile4.close();
+System.out.println("Average = "+(sum/count4));
+
+
+//Writing to an output file
+File fileName5 = new File("hello.txt");
+
+      PrintWriter outFile = new PrintWriter(fileName5);
+   
+      for (int loop = 1; loop <= 10; loop++)
+      {
+         outFile.println(loop + " Hello, World!");
+      }//end for loop
+   
+      outFile.close( );    //close the file when finished
+
+
+//read intCommas.txt, calculate average, and write to an output file
+File fileName6 = new File ("intCommas.txt");
+Scanner inputFile6=new Scanner(fileName6).useDelimiter(",");
+File fileName66 = new File ("intCommasAvg.txt");
+
+      PrintWriter outFile6 = new PrintWriter(fileName66);
+
+
+double sum6 = 0.0;
+int count6=0;
+
+while(inputFile6.hasNextInt())
+{
+sum6 += inputFile6.nextInt();
+count6++;
+}
+inputFile6.close();
+outFile6.println("Average = "+(sum6/count6));
+outFile6.close();
   }
 }
